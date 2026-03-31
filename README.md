@@ -14,13 +14,12 @@ Stay focused. Block distractions. Track your screen time.
 
 ## How to Use (Local Development)
 
-1. Open Chrome and go to `chrome://extensions`
-2. Enable **Developer mode** (top-right toggle)
-3. Click **Load unpacked**
-4. Select the `blocktab/` folder
-5. Pin the extension to your toolbar (click 🧩 → pin BlockTab)
-
-**No build step required.** This is plain HTML/CSS/JS — Chrome loads it directly.
+1.  Download the files
+2.  Open Chrome and go to `chrome://extensions`
+3. Enable **Developer mode** (top-right toggle)
+4. Click **Load unpacked**
+5. Select the `blocktab/` folder
+6. Pin the extension to your toolbar 
 
 ## Structure
 
