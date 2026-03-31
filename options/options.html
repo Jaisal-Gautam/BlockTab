@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlockTab — Dashboard</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+
+<body>
+  <div class="dashboard">
+    <header class="dash-header">
+      <div class="dash-logo">
+        <span>🛡️</span>
+        <h1>BlockTab Dashboard</h1>
+      </div>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="limits">⏱️ Limits</button>
+      <button class="tab" data-tab="blocked">🚫 Blocked</button>
+      <button class="tab" data-tab="whitelist">✅ Whitelist</button>
+      <button class="tab" data-tab="youtube">▶️ YouTube</button>
+      <button class="tab" data-tab="data">📊 Data</button>
+    </nav>
+
+    <!-- Limits Tab -->
+    <section id="tab-limits" class="tab-content active">
+      <div class="card">
+        <h2>Site Time Limits</h2>
+        <p class="card-desc">Set daily time limits. Sites get blocked when the limit is reached.</p>
+        <div id="limitsContainer" class="limits-list"></div>
+        <div class="add-limit">
+          <input type="text" id="newDomain" placeholder="e.g. reddit.com" class="input">
+          <div class="time-inputs">
+            <input type="number" id="newHours" placeholder="H" min="0" max="23" class="input small">
+            <span>:</span>
+            <input type="number" id="newMinutes" placeholder="M" min="0" max="59" class="input small">
+          </div>
+          <button id="addLimitBtn" class="btn primary">Add</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blocked Group Tab -->
+    <section id="tab-blocked" class="tab-content">
+      <div class="card">
+        <h2>Blocked Group</h2>
+        <p class="card-desc">Sites in this group are <strong>permanently blocked</strong> until you manually remove them. No writing challenge, no time limit — always blocked.</p>
+        <div id="blockedGroupContainer" class="limits-list"></div>
+        <div class="add-limit">
+          <input type="text" id="newBlockedDomain" placeholder="e.g. instagram.com" class="input">
+          <button id="addBlockedBtn" class="btn danger-solid">Block Forever</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Whitelist Tab -->
+    <section id="tab-whitelist" class="tab-content">
+      <div class="card">
+        <h2>Strict Mode Whitelist</h2>
+        <p class="card-desc">Sites allowed during strict mode. All others are blocked.</p>
+        <div id="whitelistContainer" class="limits-list"></div>
+        <div class="add-limit">
+          <input type="text" id="newWhitelistDomain" placeholder="e.g. docs.google.com" class="input">
+          <button id="addWhitelistBtn" class="btn primary">Add</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- YouTube Tab -->
+    <section id="tab-youtube" class="tab-content">
+      <div class="card">
+        <h2>YouTube Controls</h2>
+        <p class="card-desc">Customize your YouTube experience to reduce distractions.</p>
+        <div class="toggle-group">
+          <label class="toggle-row">
+            <div class="toggle-info">
+              <span class="toggle-title">Hide Shorts</span>
+              <span class="toggle-desc">Remove Shorts shelf, tab, and redirect /shorts/ URLs</span>
+            </div>
+            <input type="checkbox" id="hideShorts" class="toggle-input">
+            <span class="toggle-slider"></span>
+          </label>
+          <label class="toggle-row">
+            <div class="toggle-info">
+              <span class="toggle-title">Hide Comments</span>
+              <span class="toggle-desc">Remove comment sections from videos</span>
+            </div>
+            <input type="checkbox" id="hideComments" class="toggle-input">
+            <span class="toggle-slider"></span>
+          </label>
+          <label class="toggle-row">
+            <div class="toggle-info">
+              <span class="toggle-title">Hide Recommendations</span>
+              <span class="toggle-desc">Remove sidebar and end-screen suggestions</span>
+            </div>
+            <input type="checkbox" id="hideRecommendations" class="toggle-input">
+            <span class="toggle-slider"></span>
+          </label>
+          <label class="toggle-row">
+            <div class="toggle-info">
+              <span class="toggle-title">Disable Autoplay</span>
+              <span class="toggle-desc">Turn off auto-playing next video</span>
+            </div>
+            <input type="checkbox" id="disableAutoplay" class="toggle-input">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Tab -->
+    <section id="tab-data" class="tab-content">
+      <div class="card">
+        <h2>Usage History</h2>
+        <p class="card-desc">Your browsing time, broken down by day.</p>
+        <div id="usageHistory" class="usage-history"></div>
+        <div class="data-actions">
+          <button id="exportBtn" class="btn secondary">📤 Export</button>
+          <button id="importBtn" class="btn secondary">📥 Import</button>
+          <input type="file" id="importFile" accept=".json" class="hidden">
+          <button id="clearBtn" class="btn danger">🗑️ Clear All</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

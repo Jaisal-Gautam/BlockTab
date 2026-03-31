@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strict Mode — BlockTab</title>
+  <link rel="stylesheet" href="strict.css">
+</head>
+<body>
+  <div class="strict-page">
+    <div class="strict-card">
+      <div class="strict-icon">⚡</div>
+      <h1>Strict Mode Active</h1>
+
+      <div class="countdown-row">
+        <span class="countdown-label">Session ends in</span>
+        <span class="countdown-value" id="countdown">--:--</span>
+      </div>
+
+      <!-- Typing challenge to exit -->
+      <div class="challenge-section" id="challengeSection">
+        <div class="challenge-header">
+          <h3>Type to Exit Strict Mode</h3>
+          <p class="challenge-desc">Type the passage below <em>exactly</em> — no copying or pasting allowed.</p>
+        </div>
+
+        <div class="passage-box" id="passageBox">
+          <!-- filled by JS -->
+        </div>
+
+        <div class="progress-row">
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill" style="width:0%"></div>
+          </div>
+          <span class="word-count" id="wordCount">0 / 500 words</span>
+        </div>
+
+        <textarea
+          id="challengeInput"
+          class="challenge-input"
+          placeholder="Start typing here..."
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+        ></textarea>
+
+        <div id="errorMsg" class="error-msg hidden">⚠️ Text doesn't match — keep typing exactly as shown</div>
+
+        <button id="unlockBtn" class="unlock-btn" disabled>🔓 Exit Strict Mode</button>
+      </div>
+
+      <div class="whitelist-info">
+        <h4>Allowed Sites</h4>
+        <ul id="whitelist" class="whitelist"></ul>
+      </div>
+    </div>
+
+    <div class="particles">
+      <div class="particle r"></div>
+      <div class="particle r"></div>
+      <div class="particle r"></div>
+    </div>
+  </div>
+
+  <script src="strict.js"></script>
+</body>
+</html>

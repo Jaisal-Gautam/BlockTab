@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing Challenge — BlockTab</title>
+  <link rel="stylesheet" href="writing.css">
+</head>
+<body>
+  <div class="writing-page">
+    <div class="writing-card">
+      <div class="writing-icon">✍️</div>
+      <h1>Writing Challenge</h1>
+
+      <p class="writing-msg">
+        Type the passage below <strong>exactly</strong> to unlock
+        <span id="domain" class="highlight">this site</span>
+        for <span id="unlockDuration">5 minutes</span>.
+        <span id="blockedNote" class="blocked-note hidden"> You can only do this <strong>once today</strong>.</span>
+      </p>
+
+      <!-- Preset passage to copy from (visually, but not selectable) -->
+      <div class="passage-box" id="passageBox"></div>
+
+      <!-- Typing area -->
+      <div class="writing-area">
+        <textarea
+          id="textarea"
+          placeholder="Start typing the passage above..."
+          rows="6"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+        ></textarea>
+        <div class="char-count">
+          <span id="charCount">0</span> / <span id="totalChars">0</span> characters
+        </div>
+      </div>
+
+      <div id="errorMsg" class="error-msg hidden">⚠️ Text doesn't match — keep typing exactly as shown</div>
+
+      <button id="unlockBtn" class="btn unlock-btn" disabled>🔓 Unlock Site</button>
+      <button id="backBtn" class="btn back-btn">← Go Back</button>
+    </div>
+  </div>
+
+  <script src="writing.js"></script>
+</body>
+</html>

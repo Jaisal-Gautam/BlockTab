@@ -1,0 +1,244 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #09090b;
+  color: #e4e4e7;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.strict-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.strict-card {
+  text-align: center;
+  max-width: 640px;
+  width: 100%;
+  padding: 36px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(239,68,68,0.15);
+  border-radius: 24px;
+  z-index: 1;
+}
+
+.strict-icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+  animation: zap 1.5s ease-in-out infinite;
+}
+
+@keyframes zap {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.1) rotate(-5deg); }
+  75% { transform: scale(1.1) rotate(5deg); }
+}
+
+.strict-card h1 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #f87171, #ef4444);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.countdown-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  padding: 10px 20px;
+  background: rgba(239,68,68,0.07);
+  border-radius: 12px;
+}
+
+.countdown-label {
+  font-size: 13px;
+  color: #71717a;
+}
+
+.countdown-value {
+  font-size: 24px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: #f87171;
+}
+
+/* ── Challenge Section ── */
+.challenge-section {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.challenge-header {
+  margin-bottom: 12px;
+}
+
+.challenge-header h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.challenge-desc {
+  font-size: 12px;
+  color: #71717a;
+}
+
+.passage-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #a1a1aa;
+  max-height: 160px;
+  overflow-y: auto;
+  margin-bottom: 14px;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.passage-box::-webkit-scrollbar { width: 4px; }
+.passage-box::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+.progress-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.progress-track {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #818cf8, #a78bfa);
+  border-radius: 3px;
+  transition: width 0.3s ease, background 0.4s ease;
+}
+
+.word-count {
+  font-size: 11px;
+  color: #52525b;
+  white-space: nowrap;
+}
+
+.challenge-input {
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  color: #e4e4e7;
+  font-size: 13px;
+  font-family: inherit;
+  line-height: 1.6;
+  resize: vertical;
+  outline: none;
+  min-height: 120px;
+  transition: border-color 0.2s;
+  margin-bottom: 8px;
+}
+
+.challenge-input:focus {
+  border-color: rgba(239,68,68,0.4);
+}
+
+.challenge-input::placeholder { color: #3f3f46; }
+
+.error-msg {
+  font-size: 12px;
+  color: #f87171;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  background: rgba(239,68,68,0.08);
+  border-radius: 6px;
+}
+
+.unlock-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #818cf8, #a78bfa);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.unlock-btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.unlock-btn:not(:disabled):hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ── Whitelist ── */
+.whitelist-info {
+  text-align: left;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.whitelist-info h4 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #71717a;
+  margin-bottom: 8px;
+}
+
+.whitelist {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.whitelist li {
+  padding: 3px 10px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 6px;
+  font-size: 12px;
+  color: #71717a;
+}
+
+/* Particles */
+.particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.particle.r { position: absolute; width: 8px; height: 8px; background: rgba(239,68,68,0.15); border-radius: 50%; animation: float 6s ease-in-out infinite; }
+.particle.r:nth-child(1) { top: 15%; left: 20%; animation-delay: 0s; }
+.particle.r:nth-child(2) { top: 70%; left: 75%; animation-delay: 2s; }
+.particle.r:nth-child(3) { top: 40%; left: 50%; animation-delay: 4s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); opacity: 0.2; }
+  50% { transform: translateY(-25px); opacity: 0.5; }
+}

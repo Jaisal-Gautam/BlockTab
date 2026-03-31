@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blocked — BlockTab</title>
+    <link rel="stylesheet" href="blocked.css">
+</head>
+
+<body>
+    <div class="blocked-page">
+        <div class="blocked-card">
+            <div class="blocked-icon">🚫</div>
+            <h1>Time's Up</h1>
+            <p class="blocked-domain" id="domain">this site</p>
+            <p class="blocked-msg">You've reached your daily time limit for this site. Take a break or do something
+                productive!</p>
+
+            <div class="blocked-stats">
+                <div class="stat">
+                    <span class="stat-label">Time Used</span>
+                    <span class="stat-value" id="timeUsed">—</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Daily Limit</span>
+                    <span class="stat-value" id="dailyLimit">—</span>
+                </div>
+            </div>
+
+            <div class="blocked-actions">
+                <button id="writingBtn" class="btn unlock-btn">✍️ Unlock with Writing Challenge</button>
+                <button id="dashboardBtn" class="btn secondary-btn">⚙️ Open Dashboard</button>
+            </div>
+        </div>
+
+        <!-- Floating particles for visual flair -->
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+
+    <script src="blocked.js"></script>
+</body>
+
+</html>
