@@ -42,6 +42,7 @@ import {
 let activeTabId = null;
 let activeDomain = null;
 let trackingStartTime = null; // Date.now() when we started tracking this domain
+let isSystemIdle = false;
 
 // ──────────────────────────────────────
 //  Time Tracker (timestamp-based)
@@ -59,6 +60,8 @@ async function flushTime() {
 }
 
 function updateActiveTab(tab) {
+  if (isSystemIdle) return; // Do not start tracking if system is idle/locked
+
   const domain = tab.url ? getDomain(tab.url) : null;
   if (!domain || tab.url.startsWith('chrome://') || tab.url.startsWith('chrome-extension://')) {
     // Flush any pending time, then stop
@@ -127,6 +130,19 @@ chrome.windows.onFocusChanged.addListener(async (windowId) => {
       activeTabId = null;
       trackingStartTime = null;
     }
+  }
+});
+
+chrome.idle.onStateChanged.addListener(async (newState) => {
+  if (newState === 'locked' || newState === 'idle') {
+    isSystemIdle = true;
+    await flushTime();
+    activeDomain = null;
+    activeTabId = null;
+    trackingStartTime = null;
+  } else if (newState === 'active') {
+    isSystemIdle = false;
+    await syncCurrentTab();
   }
 });
 
